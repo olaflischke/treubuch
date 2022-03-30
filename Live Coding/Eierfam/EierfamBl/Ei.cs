@@ -11,15 +11,18 @@ namespace EierfamBl
     {
         // Irgendwo im restlichen Code (zB. UI)
         // Ei ei = new Ei();
-        public Ei()
+        public Ei(Huhn mutter)
         {
-
+            this.Mutter = mutter;
+            Random random = new Random();
+            this.Gewicht = random.Next(45, 80);
+            this.Farbe = (EiFarbe)random.Next(Enum.GetNames(typeof(EiFarbe)).Length); // DirectCast, kann Exception liefern, wenn der Cast fehlschlägt!
         }
 
         // ei.Gewicht2 = 60;
         // Öffentliches Feld
         //public double Gewicht2{ get; set; }
-        
+
         // Full-qualified Property
 
         // Backing Field
@@ -55,5 +58,16 @@ namespace EierfamBl
         //}
 
         public Guid Id { get; set; } = Guid.NewGuid();
+
+        public Huhn Mutter { get; set; }
+
+        public EiFarbe Farbe { get; set; }
+    }
+
+    public enum EiFarbe
+    {
+        Hell,
+        Dunkel,
+        Gruen
     }
 }
