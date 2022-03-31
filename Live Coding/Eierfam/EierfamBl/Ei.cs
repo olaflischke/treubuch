@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace EierfamBl
 {
-
+    /// <summary>
+    /// Stellt ein Ei dar.
+    /// </summary>
     public class Ei
     {
         // Irgendwo im restlichen Code (zB. UI)
         // Ei ei = new Ei();
-        public Ei(Huhn mutter)
+        public Ei(IEiLeger mutter)
         {
             this.Mutter = mutter;
             Random random = new Random();
@@ -57,9 +59,12 @@ namespace EierfamBl
         //    private set { _legeDatum = value; }
         //}
 
+        /// <summary>
+        /// Gibt die Id des Eis zurück oder legt sie fest.
+        /// </summary>
         public Guid Id { get; set; } = Guid.NewGuid();
 
-        public Huhn Mutter { get; set; }
+        public IEiLeger Mutter { get; set; }
 
         public EiFarbe Farbe { get; set; }
     }

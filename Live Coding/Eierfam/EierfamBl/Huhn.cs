@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace EierfamBl
 {
-    public class Huhn : INotifyPropertyChanged
+    public class Huhn : Gefluegel
     {
         public event EventHandler EigenschaftGeaendert;
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        public Huhn(string name)
+        public Huhn(string name) : base(name)
         {
             this.Name = name;
             this.Gewicht = 1000;
@@ -27,44 +26,7 @@ namespace EierfamBl
             }
         }
 
-        private void OnPropertyChanged(string propName)
-        {
-            if (PropertyChanged!=null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propName));
-            }
-        }
-
-        private double _gewicht;
-
-        public double Gewicht
-        {
-            get { return _gewicht; }
-            set
-            {
-                _gewicht = value;
-                //OnEigenschaftGeaendert();
-                OnPropertyChanged("Gewicht");
-            }
-        }
-
-        public Guid Id { get; private set; } = Guid.NewGuid();
-        private string _name;
-
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                _name = value;
-                //OnEigenschaftGeaendert();
-                OnPropertyChanged("Name");
-            }
-        }
-
-        public ObservableCollection<Ei> Eier { get; set; } = new ObservableCollection<Ei>();
-
-        public void EiLegen()
+        public override void EiLegen()
         {
             if (this.Gewicht > 1500)
             {
@@ -75,12 +37,20 @@ namespace EierfamBl
 
         }
 
-        public void Fressen()
+        public override void Fressen()
         {
             if (this.Gewicht < 3000)
             {
                 //this.Gewicht = this.Gewicht + 100;
                 this.Gewicht += 100;
+            }
+        }
+
+        public override void Fressen(double menge)
+        {
+            if (this.Gewicht < 3000)
+            {
+                this.Gewicht += menge;
             }
         }
     }

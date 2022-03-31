@@ -36,6 +36,15 @@ namespace EierfarmWpfUi
             cbxTiere.SelectedItem = huhn;
         }
 
+        private void btnNeueGans_Click(object sender, RoutedEventArgs e)
+        {
+            Gans gans = new Gans();
+
+            cbxTiere.Items.Add(gans);
+            cbxTiere.SelectedItem = gans;
+        }
+
+
         //private void Huhn_EigenschaftGeaendert(object sender, EventArgs e)
         //{
         //    //MessageBox.Show("Huhn hat eine Eigenschaft geändert!");
@@ -48,22 +57,22 @@ namespace EierfarmWpfUi
 
         private void btnEiLegen_Click(object sender, RoutedEventArgs e)
         {
-            if (cbxTiere.SelectedItem is Huhn huhn)
+            if (cbxTiere.SelectedItem is IEiLeger viech)
             {
-                huhn.EiLegen();
+                viech.EiLegen();
             }
             else
             {
-                MessageBox.Show("Kein eilegefähiges Huhn gefunden.");
+                MessageBox.Show("Kein eilegefähiges viech gefunden.");
             }
         }
 
         private void btnFuettern_Click(object sender, RoutedEventArgs e)
         {
-            Huhn huhn = cbxTiere.SelectedItem as Huhn; // SafeCast, liefert null, wenn Cast fehlschlägt
-            if (huhn != null)
+            ITier viech = cbxTiere.SelectedItem as ITier; // SafeCast, liefert null, wenn Cast fehlschlägt
+            if (viech != null)
             {
-                huhn.Fressen();
+                viech.Fressen();
             }
             else
             {
@@ -72,5 +81,12 @@ namespace EierfarmWpfUi
             
         }
 
+        private void btnNeuesSchnabeltier_Click(object sender, RoutedEventArgs e)
+        {
+            Schnabeltier schnabeltier = new Schnabeltier();
+
+            cbxTiere.Items.Add(schnabeltier);
+            cbxTiere.SelectedItem = schnabeltier;
+        }
     }
 }

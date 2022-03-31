@@ -15,6 +15,12 @@
             Canvas.Top="11"
             Width="75"
             Content="Huhn" Click="btnNeuesHuhn_Click" />
+        <Button x:Name="btnNeueGans"
+            Canvas.Left="268"
+            Canvas.Top="36"
+            Width="75"
+            Content="Gans" Click="btnNeueGans_Click" />
+
         <ComboBox
             x:Name="cbxTiere"
             Canvas.Left="110"
@@ -65,6 +71,11 @@
             Canvas.Top="154"
             Width="75"
             Content="Ei legen" Click="btnEiLegen_Click" />
+        <Button x:Name="btnNeuesSchnabeltier"
+            Canvas.Left="268"
+            Canvas.Top="61"
+            Width="75"
+            Content="Schnabeltier" Click="btnNeuesSchnabeltier_Click" />
 
     </Canvas>
 </Window>
