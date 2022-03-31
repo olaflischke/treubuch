@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ei.cs" />
+    <Compile Include="Ente.cs" />
     <Compile Include="Gans.cs" />
     <Compile Include="Gefluegel.cs" />
     <Compile Include="Huhn.cs" />

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace EierfamBl
 {
-    public interface IEiLeger 
+    public interface IEiLeger
     {
         ObservableCollection<Ei> Eier { get; set; }
         double Gewicht { get; set; }

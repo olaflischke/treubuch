@@ -10,20 +10,11 @@ namespace EierfamBl
 {
     public class Huhn : Gefluegel
     {
-        public event EventHandler EigenschaftGeaendert;
 
         public Huhn(string name) : base(name)
         {
             this.Name = name;
             this.Gewicht = 1000;
-        }
-
-        private void OnEigenschaftGeaendert()
-        {
-            if (EigenschaftGeaendert != null)
-            {
-                EigenschaftGeaendert(this, new EventArgs());
-            }
         }
 
         public override void EiLegen()

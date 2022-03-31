@@ -7,28 +7,8 @@ namespace HistoricalRatesBl
 {
     public class ExchangeRate
     {
-        public double Rate
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public double Rate { get; set; }
 
-            set
-            {
-            }
-        }
-
-        public string Symbol
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
+        public string Symbol { get; set; }
     }
 }

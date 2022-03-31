@@ -20,6 +20,9 @@ namespace EierfamBl
         private double _gewicht;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public event EventHandler<GefluegelEventArgs> EigenschaftGeaendert;
+
         public ObservableCollection<Ei> Eier { get; set; } = new ObservableCollection<Ei>();
 
         public double Gewicht
@@ -28,7 +31,7 @@ namespace EierfamBl
             set
             {
                 _gewicht = value;
-                //OnEigenschaftGeaendert();
+                OnEigenschaftGeaendert(nameof(this.Gewicht));
                 OnPropertyChanged();
             }
         }
@@ -41,7 +44,7 @@ namespace EierfamBl
             set
             {
                 _name = value;
-                //OnEigenschaftGeaendert();
+                OnEigenschaftGeaendert(nameof(this.Name));
                 OnPropertyChanged();
             }
         }
@@ -61,5 +64,23 @@ namespace EierfamBl
         {
             this.Gewicht += menge;
         }
+
+        private void OnEigenschaftGeaendert(string propName)
+        {
+            if (EigenschaftGeaendert != null)
+            {
+                EigenschaftGeaendert(this, new GefluegelEventArgs(propName));
+            }
+        }
+    }
+
+    public class GefluegelEventArgs:EventArgs
+    {
+        public GefluegelEventArgs(string geaenderteEigenschaft)
+        {
+            this.GeaenderteEigenschaft = geaenderteEigenschaft;
+        }
+
+        public string GeaenderteEigenschaft { get; set; }
     }
 }

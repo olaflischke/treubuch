@@ -30,8 +30,8 @@ namespace EierfarmWpfUi
         {
             Huhn huhn = new Huhn("Neues Huhn");
 
-            //huhn.EigenschaftGeaendert += this.Huhn_EigenschaftGeaendert;
-
+            huhn.EigenschaftGeaendert += this.Gefluegel_EigenschaftGeaendert;
+            
             cbxTiere.Items.Add(huhn);
             cbxTiere.SelectedItem = huhn;
         }
@@ -40,20 +40,28 @@ namespace EierfarmWpfUi
         {
             Gans gans = new Gans();
 
+            gans.EigenschaftGeaendert += Gefluegel_EigenschaftGeaendert;
+
             cbxTiere.Items.Add(gans);
             cbxTiere.SelectedItem = gans;
         }
 
 
-        //private void Huhn_EigenschaftGeaendert(object sender, EventArgs e)
-        //{
-        //    //MessageBox.Show("Huhn hat eine Eigenschaft geändert!");
-        //    if (sender is Huhn huhn)
-        //    {
-        //        cbxTiere.SelectedItem = null;
-        //        cbxTiere.SelectedItem = huhn;
-        //    }
-        //}
+        private void Gefluegel_EigenschaftGeaendert(object sender, GefluegelEventArgs e)
+        {
+            string hallo = "Hallo"; // Strings are immutable! String = Char[]
+            string welt = "Welt";
+            string meldung = hallo + " " + welt;
+
+            StringBuilder builder = new StringBuilder("Hallo");
+            builder.Append(" ");
+            builder.Append("Welt");
+            string meldung2 = builder.ToString();
+
+
+            MessageBox.Show($"Tier {((Gefluegel)sender).Name} hat Eigenschaft {e.GeaenderteEigenschaft} geändert!");
+            
+        }
 
         private void btnEiLegen_Click(object sender, RoutedEventArgs e)
         {

@@ -7,28 +7,8 @@ namespace HistoricalRatesBl
 {
     public class TradingDay
     {
-        public DateTime Date
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public DateTime Date { get; set; }
 
-            set
-            {
-            }
-        }
-
-        public List<ExchangeRate> ExchangeRates
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
+        public List<ExchangeRate> ExchangeRates { get; set; }
     }
 }
