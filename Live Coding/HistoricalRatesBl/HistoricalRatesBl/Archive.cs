@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 
-namespace HistoricalRatesBl
+namespace HistoricalRatesDal
 {
     public class Archive
     {
@@ -34,6 +34,13 @@ namespace HistoricalRatesBl
                                 //.Select(de => new TradingDay() { Date = Convert.ToDateTime(de.Attribute("time").Value) });
                                 .Select(de => new TradingDay(de));
 
+            //foreach(var element in q)
+            //{
+            //    element.
+            //}
+
+            //DataGrid1.ItemsSource = q.ToList(); // Wenn DataGrid.AutgenerateColumns==true
+
             //foreach (XElement item in q)
             //{
             //    TradingDay day = new TradingDay() { Date = Convert.ToDateTime(item.Attribute("time").Value) };
@@ -44,6 +51,7 @@ namespace HistoricalRatesBl
 
             return days;
         }
+
 
         public List<TradingDay> TradingDays { get; set; }
     }

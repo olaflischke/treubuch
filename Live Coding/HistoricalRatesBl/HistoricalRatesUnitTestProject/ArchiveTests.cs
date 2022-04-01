@@ -1,4 +1,4 @@
-﻿using HistoricalRatesBl;
+﻿using HistoricalRatesDal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
@@ -22,6 +22,17 @@ namespace HistoricalRatesUnitTestProject
             Console.WriteLine($"Erster TradingDay: {archive.TradingDays.FirstOrDefault()?.Date.ToShortDateString()}");
             
             Assert.AreEqual(CountAttribute("time"), archive.TradingDays.Count);
+        }
+
+        [TestMethod]
+        public void IsUsdCorrect()
+        {
+            Archive archive = new Archive(url);
+
+            TradingDay first = archive.TradingDays.Where(td => td.Date==new DateTime(2022,3,31)).FirstOrDefault();
+            ExchangeRate usd = first?.ExchangeRates.FirstOrDefault();
+
+            Assert.AreEqual(1.1101, archive.TradingDays.FirstOrDefault()?.ExchangeRates.FirstOrDefault()?.Rate);
         }
 
         /// <summary>

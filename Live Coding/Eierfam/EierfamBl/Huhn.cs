@@ -37,12 +37,12 @@ namespace EierfamBl
             }
         }
 
-        public override void Fressen(double menge)
-        {
-            if (this.Gewicht < 3000)
-            {
-                this.Gewicht += menge;
-            }
-        }
+        //public override void Fressen(double menge)
+        //{
+        //    if (this.Gewicht < 3000)
+        //    {
+        //        this.Gewicht += menge;
+        //    }
+        //}
     }
 }

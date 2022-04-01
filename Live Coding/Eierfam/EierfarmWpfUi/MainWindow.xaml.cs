@@ -31,7 +31,7 @@ namespace EierfarmWpfUi
             Huhn huhn = new Huhn("Neues Huhn");
 
             huhn.EigenschaftGeaendert += this.Gefluegel_EigenschaftGeaendert;
-            
+
             cbxTiere.Items.Add(huhn);
             cbxTiere.SelectedItem = huhn;
         }
@@ -60,7 +60,7 @@ namespace EierfarmWpfUi
 
 
             MessageBox.Show($"Tier {((Gefluegel)sender).Name} hat Eigenschaft {e.GeaenderteEigenschaft} geändert!");
-            
+
         }
 
         private void btnEiLegen_Click(object sender, RoutedEventArgs e)
@@ -78,15 +78,27 @@ namespace EierfarmWpfUi
         private void btnFuettern_Click(object sender, RoutedEventArgs e)
         {
             ITier viech = cbxTiere.SelectedItem as ITier; // SafeCast, liefert null, wenn Cast fehlschlägt
+
+
+
             if (viech != null)
             {
-                viech.Fressen();
+                if (viech is Huhn huhn)
+                {
+                    // Implementierung aus Gefluegel oder aus ExtensionMethod?
+                    // -> Gefluegel!
+                    huhn.Fressen(300, 3);
+                }
+                else
+                {
+                    viech.Fressen();
+                }
             }
             else
             {
                 MessageBox.Show(messageBoxText: "Kein Huhn zum Füttern gefunden!");
             }
-            
+
         }
 
         private void btnNeuesSchnabeltier_Click(object sender, RoutedEventArgs e)

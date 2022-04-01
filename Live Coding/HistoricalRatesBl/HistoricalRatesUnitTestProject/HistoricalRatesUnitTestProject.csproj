@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HistoricalRatesBl\HistoricalRatesBl.csproj">
+    <ProjectReference Include="..\HistoricalRatesBl\HistoricalRatesDal.csproj">
       <Project>{2CD1A229-3852-4AC2-8C92-CA05CB512BB2}</Project>
-      <Name>HistoricalRatesBl</Name>
+      <Name>HistoricalRatesDal</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

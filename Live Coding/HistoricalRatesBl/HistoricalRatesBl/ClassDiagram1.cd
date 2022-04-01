@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="HistoricalRatesBl.TradingDay">
+  <Class Name="HistoricalRatesDal.TradingDay">
     <Position X="1.75" Y="2" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>TradingDay.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HistoricalRatesBl.ExchangeRate">
+  <Class Name="HistoricalRatesDal.ExchangeRate">
     <Position X="2.5" Y="3.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>ExchangeRate.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HistoricalRatesBl.Archive">
+  <Class Name="HistoricalRatesDal.Archive">
     <Position X="0.75" Y="0.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAEAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Archive.cs</FileName>
     </TypeIdentifier>
   </Class>
