@@ -60,7 +60,16 @@
             Canvas.Left="110"
             Canvas.Top="129"
             Width="153"
-            Height="152" ItemsSource="{Binding ElementName=cbxTiere, Path=SelectedItem.Eier}" />
+            Height="152" ItemsSource="{Binding ElementName=cbxTiere, Path=SelectedItem.Eier}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Farbe}" />
+                        <TextBlock Text="{Binding Gewicht}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button x:Name="btnFuettern"
             Canvas.Left="268"
             Canvas.Top="129"

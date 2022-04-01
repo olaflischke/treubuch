@@ -33,6 +33,7 @@ namespace EierfamBl
             if (this.Gewicht < 3000)
             {
                 //this.Gewicht = this.Gewicht + 100;
+                throw new Exception("Irgendwas ging schief.");
                 this.Gewicht += 100;
             }
         }

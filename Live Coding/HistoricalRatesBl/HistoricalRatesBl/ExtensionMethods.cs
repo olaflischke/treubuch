@@ -33,7 +33,7 @@ namespace HistoricalRatesDal
         /// <param name="list">Die Liste</param>
         /// <param name="element">Das hinzuzufügende Element</param>
         /// <remarks>Demo für ene generische Extension-Method, funktioniert wegen Contains nur für primitive Typen (int, double..)</remarks>
-        public static void AddIfNew<T>(this List<T> list, T element)
+        public static void AddIfNew<T>(this IList<T> list, T element)
         {
             if (!list.Contains(element))
             {

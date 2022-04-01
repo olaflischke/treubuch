@@ -83,16 +83,16 @@ namespace EierfarmWpfUi
 
             if (viech != null)
             {
-                if (viech is Huhn huhn)
-                {
-                    // Implementierung aus Gefluegel oder aus ExtensionMethod?
-                    // -> Gefluegel!
-                    huhn.Fressen(300, 3);
-                }
-                else
-                {
+                //if (viech is Huhn huhn)
+                //{
+                //    // Implementierung aus Gefluegel oder aus ExtensionMethod?
+                //    // -> Gefluegel!
+                //    huhn.Fressen(300);
+                //}
+                //else
+                //{
                     viech.Fressen();
-                }
+                //}
             }
             else
             {
