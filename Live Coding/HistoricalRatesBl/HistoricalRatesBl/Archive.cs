@@ -23,12 +23,16 @@ namespace HistoricalRatesBl
 
             List<TradingDay> days = new List<TradingDay>();
 
+            // XML-Dokument zu einer Basisobjektmenge machen
             XDocument document = XDocument.Load(url);
 
+            // Aus der Basisobjektmenge die Objekte raussuche, die wir brauchen
             var q = document.Root.Descendants()
                                 .Where(de => de.Name.LocalName == "Cube" && de.Attributes().Any(at => at.Name.LocalName == "time"))
-                                // Projektion auf TradingDay-Objektmenge
-                                .Select(de => new TradingDay() { Date = Convert.ToDateTime(de.Attribute("time").Value) });
+                                //.Select(de => new { Name = de.Name, Attributcount = de.Attributes().Count() });
+                                // Projektion auf TradingDay - Objektmenge
+                                //.Select(de => new TradingDay() { Date = Convert.ToDateTime(de.Attribute("time").Value) });
+                                .Select(de => new TradingDay(de));
 
             //foreach (XElement item in q)
             //{
