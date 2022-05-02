@@ -9,7 +9,7 @@ namespace HistoricalRatesDal
 {
     public class TradingDay
     {
-        public TradingDay(XElement de)
+        public TradingDay(XElement tradingDayNode)
         {
             // Zahlen- und andere Formate aus anderen Kulturen
             CultureInfo ciEcb = CultureInfo.InvariantCulture;  //new CultureInfo("de-DE");
@@ -20,17 +20,17 @@ namespace HistoricalRatesDal
             //NumberFormatInfo nfiEcb = new NumberFormatInfo() { NumberDecimalSeparator = ".", NumberGroupSeparator="" };
 
             // Datum festlegen (aus "time"-Attribut)
-            this.Date = Convert.ToDateTime(de.Attribute("time").Value);
+            this.Date = Convert.ToDateTime(tradingDayNode.Attribute("time").Value);
 
             // ExchangeRates ermitteln per LINQ
-            var q = de.Elements().Select(el => new ExchangeRate()
+            var q = tradingDayNode.Elements().Select(el => new ExchangeRate()
                                                 {
                                                     Symbol = el.Attribute("currency").Value,
                                                     Rate = Convert.ToDouble(el.Attribute("rate").Value, nfiEcb)
                                                 }
                                         );
 
-            this.ExchangeRates = q.ToList();
+            this.ExchangeRates = q.ToList(); // Deferred Execution: Zugriff auf die Ergebnismenge führt IEnumerable.GetEnumerator() aus.
         }
 
         public DateTime Date { get; set; }

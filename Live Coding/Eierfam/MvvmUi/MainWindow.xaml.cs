@@ -1,4 +1,4 @@
-﻿using MvvmMaschine.ViewModel;
+﻿using MvvmUi.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MvvmMaschine
+namespace MvvmUi
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
@@ -25,8 +25,7 @@ namespace MvvmMaschine
         {
             InitializeComponent();
 
-            // DataContext: Basis aller Bindingausdrücke in XAML (sofern nichts anderes angegeben)
-            this.DataContext = new MaschinenSteuerung();
+            this.DataContext = new EierfarmViewModel();
         }
     }
 }

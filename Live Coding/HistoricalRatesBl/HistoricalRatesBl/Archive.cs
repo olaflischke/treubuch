@@ -53,6 +53,6 @@ namespace HistoricalRatesDal
         }
 
 
-        public List<TradingDay> TradingDays { get; set; }
+        public List<TradingDay> TradingDays { get; set; } //= new List<TradingDay>();
     }
 }

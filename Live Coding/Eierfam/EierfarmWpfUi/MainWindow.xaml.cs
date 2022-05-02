@@ -21,6 +21,7 @@ namespace EierfarmWpfUi
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -49,22 +50,24 @@ namespace EierfarmWpfUi
 
         private void Gefluegel_EigenschaftGeaendert(object sender, GefluegelEventArgs e)
         {
-            string hallo = "Hallo"; // Strings are immutable! String = Char[]
-            string welt = "Welt";
-            string meldung = hallo + " " + welt;
+            //string hallo = "Hallo"; // Strings are immutable! String = Char[]
+            //string welt = "Welt";
+            //string meldung = hallo + " " + welt;
 
-            StringBuilder builder = new StringBuilder("Hallo");
-            builder.Append(" ");
-            builder.Append("Welt");
-            string meldung2 = builder.ToString();
+            //StringBuilder builder = new StringBuilder("Hallo");
+            //builder.Append(" ");
+            //builder.Append("Welt");
+            //string meldung2 = builder.ToString();
 
 
-            MessageBox.Show($"Tier {((Gefluegel)sender).Name} hat Eigenschaft {e.GeaenderteEigenschaft} geändert!");
+            //MessageBox.Show($"Tier {((Gefluegel)sender).Name} hat Eigenschaft {e.GeaenderteEigenschaft} geändert!");
 
         }
 
         private void btnEiLegen_Click(object sender, RoutedEventArgs e)
         {
+            //IEiLeger eiLeger = cbxTiere.SelectedItem as IEiLeger;
+            //if (eiLeger != null)
             if (cbxTiere.SelectedItem is IEiLeger viech)
             {
                 viech.EiLegen();
@@ -79,8 +82,6 @@ namespace EierfarmWpfUi
         {
             ITier viech = cbxTiere.SelectedItem as ITier; // SafeCast, liefert null, wenn Cast fehlschlägt
 
-
-
             if (viech != null)
             {
                 //if (viech is Huhn huhn)
@@ -91,7 +92,7 @@ namespace EierfarmWpfUi
                 //}
                 //else
                 //{
-                    viech.Fressen();
+                viech.Fressen();
                 //}
             }
             else

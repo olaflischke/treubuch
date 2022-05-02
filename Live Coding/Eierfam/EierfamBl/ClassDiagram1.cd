@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="EierfamBl.Huhn" BaseTypeListCollapsed="true">
-    <Position X="2" Y="6.25" Width="2" />
+    <Position X="2" Y="6" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
       <FileName>Huhn.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EierfamBl.Gefluegel">
-    <Position X="3.5" Y="0.5" Width="2.75" />
+    <Position X="3.5" Y="0.75" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AEACIAEAAAAQQAAgIAAAAAQAgAAAAABAAAAEAAAAAAA=</HashCode>
       <FileName>Gefluegel.cs</FileName>

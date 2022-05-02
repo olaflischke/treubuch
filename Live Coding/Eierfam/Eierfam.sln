@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EierfamBl", "EierfamBl\Eier
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EierfarmWpfUi", "EierfarmWpfUi\EierfarmWpfUi.csproj", "{4BFECCFA-08EF-4C45-A66B-468F9C57FF95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GefluegelListe", "GefluegelListe\GefluegelListe.csproj", "{CFA9ED29-3926-4030-8BA7-679BD0468E79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmUi", "MvvmUi\MvvmUi.csproj", "{01F3C973-18F4-4661-A045-4D39779312D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{4BFECCFA-08EF-4C45-A66B-468F9C57FF95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BFECCFA-08EF-4C45-A66B-468F9C57FF95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BFECCFA-08EF-4C45-A66B-468F9C57FF95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFA9ED29-3926-4030-8BA7-679BD0468E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA9ED29-3926-4030-8BA7-679BD0468E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA9ED29-3926-4030-8BA7-679BD0468E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA9ED29-3926-4030-8BA7-679BD0468E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F3C973-18F4-4661-A045-4D39779312D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F3C973-18F4-4661-A045-4D39779312D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F3C973-18F4-4661-A045-4D39779312D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F3C973-18F4-4661-A045-4D39779312D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

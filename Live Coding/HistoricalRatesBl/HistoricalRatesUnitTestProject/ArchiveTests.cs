@@ -1,4 +1,4 @@
-﻿using HistoricalRatesBl;
+﻿using HistoricalRatesDal;
 //using HistoricalRatesDal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -14,6 +14,7 @@ namespace HistoricalRatesUnitTestProject
         public ArchiveTests()
         {
             url = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml";
+            //url = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml";
         }
 
         [TestMethod]
@@ -23,6 +24,7 @@ namespace HistoricalRatesUnitTestProject
             Console.WriteLine($"Erster TradingDay: {archive.TradingDays.FirstOrDefault()?.Date.ToShortDateString()}");
             
             Assert.AreEqual(CountAttribute("time"), archive.TradingDays.Count);
+
         }
 
         [TestMethod]

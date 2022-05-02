@@ -9,9 +9,9 @@ using System.Windows.Input;
 
 namespace MvvmMaschine.ViewModel
 {
-    public class MaschinenSteuerung : INotifyPropertyChanged
+    public class MaschinenSteuerung //: INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
         public MaschinenSteuerung()
         {
@@ -28,17 +28,18 @@ namespace MvvmMaschine.ViewModel
 
         private async void Stoppen()
         {
-            try
-            {
-                //this.Maschine.Stopp();
-                await Task.Run(() => this.Maschine.StoppAsync());
+            this.Maschine.Stopp();
+            //try
+            //  {
+            //      //this.Maschine.Stopp();
+            //      await Task.Run(() => this.Maschine.StoppAsync());
 
-            }
-            catch (Exception)
-            {
+            //  }
+            //  catch (Exception)
+            //  {
 
-                throw;
-            }
+            //      throw;
+            //  }
         }
 
 

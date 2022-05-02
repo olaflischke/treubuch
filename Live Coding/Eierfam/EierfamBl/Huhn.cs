@@ -11,7 +11,8 @@ namespace EierfamBl
     public class Huhn : Gefluegel
     {
 
-        public Huhn(string name) : base(name)
+        public Huhn(string name)
+            : base(name)
         {
             this.Name = name;
             this.Gewicht = 1000;
@@ -32,8 +33,9 @@ namespace EierfamBl
         {
             if (this.Gewicht < 3000)
             {
+                //throw new Exception("Irgendwas ging schief.");
+
                 //this.Gewicht = this.Gewicht + 100;
-                throw new Exception("Irgendwas ging schief.");
                 this.Gewicht += 100;
             }
         }

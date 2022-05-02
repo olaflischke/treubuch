@@ -12,7 +12,7 @@ namespace EierfamBl
             this.Gewicht = 2000;
         }
 
-        public Gans(string name) : this() // Konstrutkoren-Kaskade
+        public Gans(string name) : this() // Konstruktoren-Kaskade
         {
             this.Name = name;
         }

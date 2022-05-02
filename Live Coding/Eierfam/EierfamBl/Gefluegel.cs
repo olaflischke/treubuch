@@ -49,8 +49,8 @@ namespace EierfamBl
             }
         }
 
-        
-        private void OnPropertyChanged([CallerMemberName]string propName="")
+
+        private void OnPropertyChanged([CallerMemberName] string propName = "")
         {
             if (PropertyChanged != null)
             {
@@ -74,7 +74,7 @@ namespace EierfamBl
         }
     }
 
-    public class GefluegelEventArgs:EventArgs
+    public class GefluegelEventArgs : EventArgs
     {
         public GefluegelEventArgs(string geaenderteEigenschaft)
         {
