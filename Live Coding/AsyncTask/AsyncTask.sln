@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFactoryKonsole", "TaskFactoryKonsole\TaskFactoryKonsole.csproj", "{4CDB769A-7EB5-46F1-ABD9-09C17970BEFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelForKonsole", "ParallelForKonsole\ParallelForKonsole.csproj", "{6B67EE32-6DC9-49DD-BB0C-D27EF4EE943B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CDB769A-7EB5-46F1-ABD9-09C17970BEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CDB769A-7EB5-46F1-ABD9-09C17970BEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CDB769A-7EB5-46F1-ABD9-09C17970BEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CDB769A-7EB5-46F1-ABD9-09C17970BEFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B67EE32-6DC9-49DD-BB0C-D27EF4EE943B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B67EE32-6DC9-49DD-BB0C-D27EF4EE943B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B67EE32-6DC9-49DD-BB0C-D27EF4EE943B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B67EE32-6DC9-49DD-BB0C-D27EF4EE943B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C646DA9-EB06-4458-81FD-0C05A9A9E097}
+	EndGlobalSection
+EndGlobal

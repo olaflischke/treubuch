@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace HistoricalRatesDal
@@ -14,11 +16,14 @@ namespace HistoricalRatesDal
             //                    .Where(de => de.Name == "Cube" && de.Attributes().Any(at => at.Name == "time"))
             //                    // Projektion auf TradingDay-Objektmenge
             //                    .Select(de => new TradingDay() { Date = Convert.ToDateTime(de.Attribute("time").Value) })).ToList();
-            this.TradingDays = GetData(url);
+            //this.TradingDays = await GetData(url);
         }
 
-        private List<TradingDay> GetData(string url)
+        public async Task<List<TradingDay>> GetData(string url)
         {
+            //Thread.Sleep(5000);
+            await Task.Delay(5000); // Langes Laden simulieren
+
             var a = new ExchangeRate(); // "type inference"
 
             List<TradingDay> days = new List<TradingDay>();

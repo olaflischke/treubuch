@@ -27,6 +27,11 @@ namespace MondialKonsole
                                         }
                                          ).OrderByDescending(land => land.Population);
 
+            Console.WriteLine();
+            Console.WriteLine("LÄNDER nach Größe:");
+            Console.WriteLine("------------------");
+
+
             foreach (var item in qLaender)
             {
                 Console.WriteLine($"{item.Name}: {item.Population:#,##0}");
@@ -46,9 +51,40 @@ namespace MondialKonsole
                                     .OrderByDescending(berg => berg.Elevation)
                                     .Take(10);
 
+            Console.WriteLine();
+            Console.WriteLine("10 höchste BERGE:");
+            Console.WriteLine("-----------------");
+
+
             foreach (var item in qBerge)
             {
                 Console.WriteLine($"{item.Name}: {item.Elevation:#,##0}");
+            }
+
+            var qCapitalsMitB = document.Root.Descendants()
+                            .Where(xe => xe.Name == "country")
+                            .Select(country => new
+                            {
+                                Name = country.Elements()
+                                            .Where(el => el.Name == "name")
+                                            .Select(el => el.Value).FirstOrDefault(),
+                                Capital = country.Descendants("city")
+                                                .Where(cty => cty.Attribute("id").Value == country.Attribute("capital")?.Value)
+                                                //.Where(cty => country.Attributes().Any(at => at.Name=="capital") && cty.Attribute("id").Value == country.Attribute("capital").Value)
+                                                .FirstOrDefault()?
+                                                .Elements("name").FirstOrDefault().Value ?? ""
+                            })
+                            .Where(ct => ct.Capital.StartsWith("A"));
+
+
+
+            Console.WriteLine();
+            Console.WriteLine("Alle Hauptstädte mit B:");
+            Console.WriteLine("-----------------");
+
+            foreach (var item in qCapitalsMitB)
+            {
+                Console.WriteLine($"{item.Name}: {item.Capital}");
             }
 
             Console.ReadKey();

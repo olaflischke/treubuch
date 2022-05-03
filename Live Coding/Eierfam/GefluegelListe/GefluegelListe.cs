@@ -27,6 +27,14 @@ namespace GefluegelListe
             ElementAdded?.Invoke(this, new ListenEventArgs(element));
         }
 
+        // Indexer:
+        // Zugriff auf die Elemente per instance[index]
+        public T this[int index]
+        {
+            get { return liste[index]; }
+            set { liste[index] = value; }
+        }
+
         /// <summary>
         /// Fügt der Liste ein weiteres Element am Ende der Liste an.
         /// </summary>

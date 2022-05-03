@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HistoricalRatesDal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,19 @@ namespace TradingDayAnalyzerUi
     /// </summary>
     public partial class MainWindow : Window
     {
+        string url = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml";
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Archive archive = new Archive(url);
+            await archive.GetData(url);
+
+            this.DataContext = archive;
         }
     }
 }

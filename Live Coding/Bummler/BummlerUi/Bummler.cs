@@ -16,24 +16,29 @@ namespace BummlerUi
             return "Fertig mit Bummeln";
         }
 
-        public async Task<string> BummelnAsync()
-        {
-            double zahl = await Task.Run(() => Wurzelsumme(1e9));
-            //await Task.Delay(2000);
-            return "Fertig mit Bummeln";
-        }
-
         public string Troedeln()
         {
             double zahl = Wurzelsumme(2e9);
             return "Fertig mit Trödeln";
         }
 
+        #region Asynchrone Implementierung
+        public async Task<string> BummelnAsync()
+        {
+            double zahl = await Task.Run(() => Wurzelsumme(1e9)); // asynchrone Ausführung
+            //await Task.Delay(2000);
+            return "Fertig mit Bummeln";
+        }
+
+
         public async Task<string> TroedelnAsync()
         {
             double zahl = await Task.Run(() => Wurzelsumme(2e9));
             return "Fertig mit Trödeln";
         }
+
+
+        #endregion
 
         private double Wurzelsumme(double max)
         {
@@ -45,32 +50,6 @@ namespace BummlerUi
             }
 
             return result;
-        }
-
-
-        private async void MultiTask()
-        {
-            try
-            {
-                Task t1 = new Task(() => Wurzelsumme(1e9));
-                Task t2 = new Task(() => Wurzelsumme(1e9));
-                Task t3 = new Task(() => Wurzelsumme(1e9));
-
-                t1.Start();
-                t2.Start();
-                t3.Start();
-
-            }
-            catch (AggregateException ex)
-            {
-
-                throw;
-            }   
-            catch (Exception ex)
-            {
-
-            }
-
         }
     }
 

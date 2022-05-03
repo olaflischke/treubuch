@@ -34,6 +34,8 @@ namespace BummlerUi
             lblBmmeln.Content = "";
             //lblBmmeln.Content = bummler.Bummeln();
             lblBmmeln.Content = await bummler.BummelnAsync();
+            //lblBmmeln.Content = await Task.Run(() => bummler.Bummeln()); // Asynchrone Ausführung von bummler.Bummeln()
+            //lblBmmeln.Content = await Task.Run(() => bummler.BummelnAsync()); // Asynchrone Ausführung von bummler.BummelnAsync(), die ihrerseits Wurzelsumme asynchron ausführt
         }
 
         private async void Button_Click_1(object sender, RoutedEventArgs e)
